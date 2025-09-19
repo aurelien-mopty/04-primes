@@ -1,25 +1,26 @@
-from math import sqrt
-
-#### Fonction secondaire
-
+import math
+import numpy as np
 
 def isprime(p):
+    ''' - prend en argument un nombre entier p
 
-    # votre code ici
+        - retourne un booléen exprimant la vérité de « p est un nombre premier ».
 
-    pass
+    >>> is_prime(5)
+     5 :True 
+    '''
 
-#### Fonction principale
-
+    if p<2:
+        return False
+    for i in range(2, math.floor(np.sqrt(p))+1):
+        if p%i==0:
+            return False
+    return True
 
 def main():
-
-    # vos appels à la fonction secondaire ici
-
     for n in range(100):
         if isprime(n):
             print(n, end=", ")
-
     print()
 
 
